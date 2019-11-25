@@ -350,7 +350,7 @@ class App(QWidget):
         try:
             if total == 1 and data[0] == "0":
                 print("This 0")
-                result_missing_1()
+                self.result_missing_1()
                 
             for semi in range(len(data) - 1):
                 print(data[semi], " ", data[semi + 1])
@@ -363,16 +363,14 @@ class App(QWidget):
                     self.button_next.setEnabled(False)
                     self.check = True
                     break
-                else:
-                    self.result_correct()
-                    self.yes()
-            if data[-1] != "1":
-                print("Data not found 1")
-                self.result_error_not_found_1()
+                
+            if total > 1 and data[-1] == "0":
+                print("Data not found 1")                
                 self.result_missing_1()
+                self.process_stop()
                 self.no()
 
-            if data[-1] == "1" and self.check is False:
+            if total > 1 and data[-1] == "1" and self.check is False:
                 print("Correct !")
                 self.string_result.setText("Correct !")
                 self.string_result.setStyleSheet('color : green')
