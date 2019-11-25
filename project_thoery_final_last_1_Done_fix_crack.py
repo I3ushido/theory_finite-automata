@@ -294,14 +294,11 @@ class App(QWidget):
                     self.result_error_00()
                     self.age_loop_last_0()
                     self.no()
-
-
                 # todo Start Final State not self loop
                 if i == total - 1 and datas[i] == '1' and status_zero is False:
                     self.process_accept()
                     self.result_correct()
                     self.yes()
-
                 # if i == total - 1 and datas[i] == '0' and status_zero is False:
                 #     print('NOT LOOP 0')
                 #     self.result_missing_1()
@@ -366,6 +363,9 @@ class App(QWidget):
                     self.button_next.setEnabled(False)
                     self.check = True
                     break
+                else:
+                    self.result_correct()
+                    self.yes()
             if data[-1] != "1":
                 print("Data not found 1")
                 self.result_error_not_found_1()
@@ -376,6 +376,8 @@ class App(QWidget):
                 print("Correct !")
                 self.string_result.setText("Correct !")
                 self.string_result.setStyleSheet('color : green')
+                self.result_correct()
+                self.yes()
         except:
             print(" String Data empty or Somethings Error... ")
 ##            self.string_result.setText("String Data empty or Somethings Error...")
