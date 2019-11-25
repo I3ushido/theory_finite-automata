@@ -360,6 +360,7 @@ class App(QWidget):
                     print("OMG!! Teacher X We found Data has is 00")
                     self.string_result.setText("OMG!! Teacher X We found Data has is 00")
                     self.string_result.setStyleSheet('color : red')
+                    
                     self.check = True
                     break
             if data[-1] != "1":
