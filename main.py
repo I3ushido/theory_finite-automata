@@ -1,9 +1,5 @@
 import sys
-import time
 import PyQt5
-
-
-import sys
 from PyQt5.QtWidgets import (
     QApplication,
     QWidget,
@@ -168,13 +164,7 @@ class App(QWidget):
         self.label_loop0.move(500, 190)
         self.pic_loop0 = QPixmap("assets/ac_01b.png")
         self.label_loop0.setPixmap(self.pic_loop0)
-        # Label self loop1
-        # self.label_loop1 = QLabel(self)
-        # self.label_loop1.resize(250, 97)
-        # self.label_loop1.move(500, 190)
-        # self.pic_loop1 = QPixmap('assets/ac_01b.png')
-        # self.label_loop1.setPixmap(self.pic_loop1)
-        # Label age1 node q0 -> q1  Emtpy
+        
         self.label_age01_reset = QLabel(self)
         self.label_age01_reset.resize(250, 98)
         self.label_age01_reset.move(130, 200)
@@ -225,8 +215,6 @@ class App(QWidget):
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.center()
         self.show()
-
-        # Set window background color
         self.setAutoFillBackground(True)
         p = self.palette()
         p.setColor(self.backgroundRole(), Qt.white)
@@ -302,7 +290,6 @@ class App(QWidget):
                 elif total > 1 and datas[0] == "1" and status_zero is False:
                     self.start_with_1()
 
-                # todo ######################################
                 if (
                     total >= 2
                     and i >= 1
@@ -351,11 +338,6 @@ class App(QWidget):
                     self.result_correct()
                     self.yes()
 
-                # if i == total - 1 and datas[i] == '0' and status_zero is False:
-                #     print('NOT LOOP 0')
-                #     self.result_missing_1()
-                #     self.no()
-                #     self.button_close()
                 if i == total - 1 and datas[i] == "0":
                     print("NOT LOOP 0")
                     self.result_missing_1()
@@ -442,8 +424,6 @@ class App(QWidget):
         except:
             print(" String Data empty or Somethings Error... ")
 
-    ##            self.string_result.setText("String Data empty or Somethings Error...")
-    ##            self.string_result.setStyleSheet('color : red')
 
     def set_fa(self):
         print("Reset FA")
@@ -488,26 +468,17 @@ class App(QWidget):
         self.pic_age01 = QPixmap("assets/ar_b50.png")
         self.label_age01.setPixmap(self.pic_age01)
         # todo
-        # self loop
         self.pic_start_self = QPixmap("assets/ac_1b.png")
         self.label_start_self.setPixmap(self.pic_start_self)
-        # photo answer
         self.pix_photo = QPixmap("assets/an.jpg")
         self.photo.setPixmap(self.pix_photo)
-        # Label node q2 -> q1 1 Black
         self.pic_age211 = QPixmap("assets/a45_1b.png")
         self.label_age211.setPixmap(self.pic_age211)
-        # Label  node q2 -> q1 0 Black
         self.pic_age120 = QPixmap("assets/a45_0b.png")
         self.label_age120.setPixmap(self.pic_age120)
 
-        # Last Node
         self.pic_loop0 = QPixmap("assets/ac_01b.png")
         self.label_loop0.setPixmap(self.pic_loop0)
-        # Label self loop1
-        # self.pic_loop1 = QPixmap('assets/ac_01b.png')
-        # self.label_loop1.setPixmap(self.pic_loop1)
-
         self.button_next.setEnabled(True)
 
         ##todo 26
@@ -609,7 +580,6 @@ class App(QWidget):
         print("No")
         self.pix_photo = QPixmap("assets/no.jpg")
         self.photo.setPixmap(self.pix_photo)
-        # self.button_next.setEnabled(False)
 
     def age_node211_red(self):
         print("age_node211_red")
@@ -640,7 +610,6 @@ class App(QWidget):
 
     def age_loop_last_0(self):
         print("age_loop_last_0")
-        # Label self loop0
         self.set_fa()
         self.string_node.setText("Node : Node Q3   ")
         self.pic_loop0 = QPixmap("assets/ac_0r1b.png")
@@ -650,7 +619,6 @@ class App(QWidget):
         self.data_has_00()
 
     def age_loop_last_1(self):
-        # Label self loop1
         print("age_loop_last_1")
         self.set_fa()
         self.string_node.setText("Node : Node Q3  ")
